@@ -92,7 +92,8 @@
         <input type="text" placeholder="Фамилия" id="user_lastName">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-        <button id="login">Login</button>
+        <input type="text" placeholder="Адрес кошелька" id="wallet_address">
+        <button id="login">GET</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -113,12 +114,14 @@
             let lastName = document.getElementById("user_lastName").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
+            let wallet_address = document.getElementById("wallet_address").value;
 
             let user = {
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
-                phone: phone
+                phone: phone,
+                wallet_address: wallet_address
             }
 
             tg.sendData(JSON.stringify(user))
